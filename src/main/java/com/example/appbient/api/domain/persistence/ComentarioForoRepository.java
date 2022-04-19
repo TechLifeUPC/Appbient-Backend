@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface ComentarioForoRepository extends JpaRepository<ComentariosForo, Long> {
     List<ComentariosForo> findByPublicacionId(Long foroId);
-
 }

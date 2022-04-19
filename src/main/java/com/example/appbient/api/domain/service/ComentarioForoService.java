@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ComentarioForoService {
     List<ComentariosForo> findByForoId(Long foroId);
-    ComentariosForo create(CreateComentarioForoResource comentario);
+    ComentariosForo create(Long foroId,CreateComentarioForoResource comentario);
     ResponseEntity<?> delete(Long id);
 }

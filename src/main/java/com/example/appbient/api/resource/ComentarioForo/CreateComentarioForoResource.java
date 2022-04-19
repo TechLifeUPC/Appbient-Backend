@@ -7,5 +7,4 @@ import lombok.Setter;
 @Setter
 public class CreateComentarioForoResource {
     private String descripcion;
-    private Long foroId;
 }

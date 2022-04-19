@@ -20,25 +20,21 @@ public class ComentarioForoServiceImpl implements ComentarioForoService {
 
     private final ComentarioForoRepository comentarioRepository;
     private final PublicacionForoRepository publicacionRepository;
-    private final Validator validation;
 
-    public ComentarioForoServiceImpl(ComentarioForoRepository comentarioRepository, PublicacionForoRepository publicacionRepository, Validator validation) {
+    public ComentarioForoServiceImpl(ComentarioForoRepository comentarioRepository, PublicacionForoRepository publicacionRepository) {
         this.comentarioRepository = comentarioRepository;
         this.publicacionRepository = publicacionRepository;
-        this.validation = validation;
     }
 
     @Override
-    public List<ComentariosForo> findByForoId(Long foroId) {
-        return comentarioRepository.findByPublicacionId(foroId);
-    }
+    public List<ComentariosForo> findByForoId(Long foroId) {   return comentarioRepository.findByPublicacionId(foroId);    }
 
     @Override
-    public ComentariosForo create(CreateComentarioForoResource request) {
-        PublicacionForo publicacion = publicacionRepository.findById(request.getForoId()).orElseThrow(() -> new ResourceNotFoundException(ENTITY, request.getForoId()));
+    public ComentariosForo create(Long foroId,CreateComentarioForoResource request) {
+        PublicacionForo publicacion = publicacionRepository.findById(foroId).orElseThrow(() -> new ResourceNotFoundException(ENTITY, foroId));
         ComentariosForo comentario = new ComentariosForo();
             comentario.setDescripcion(request.getDescripcion());
-            comentario.setPublicacionForo(publicacion);
+            comentario.setPublicacion(publicacion);
         return comentarioRepository.save(comentario);
     }
 

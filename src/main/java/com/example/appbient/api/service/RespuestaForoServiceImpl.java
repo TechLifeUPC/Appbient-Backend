@@ -33,8 +33,8 @@ public class RespuestaForoServiceImpl implements RespuestaForoService {
     }
 
     @Override
-    public RespuestaForo create(CreateRespuestaForoResource request) {
-        ComentariosForo comentario = comentarioForoRepository.findById(request.getComentarioId()).orElseThrow(() -> new ResourceNotFoundException(ENTITY, request.getComentarioId()));
+    public RespuestaForo create(Long comentarioId,CreateRespuestaForoResource request) {
+        ComentariosForo comentario = comentarioForoRepository.findById(comentarioId).orElseThrow(() -> new ResourceNotFoundException(ENTITY, comentarioId));
         RespuestaForo respuesta = new RespuestaForo();
         respuesta.setDescripcion(request.getDescripcion());
         respuesta.setComentario(comentario);

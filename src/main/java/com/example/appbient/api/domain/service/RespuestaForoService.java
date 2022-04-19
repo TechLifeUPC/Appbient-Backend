@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface RespuestaForoService {
     List<RespuestaForo> findByComentario(Long ComentarioId);
-    RespuestaForo create(CreateRespuestaForoResource respuestaForo);
+    RespuestaForo create(Long comentarioId,CreateRespuestaForoResource respuestaForo);
     ResponseEntity<?> delete(Long id);
 }

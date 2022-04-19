@@ -32,6 +32,16 @@ public class MappingConfiguration {
         return new ComentarioForoMapper();
     }
 
+    @Bean
+    public OngMapper ongMapper() {
+        return new OngMapper();
+    }
+
+    @Bean
+    public LocalMapper localMapper() {
+        return new LocalMapper();
+    }
+
 
 
 

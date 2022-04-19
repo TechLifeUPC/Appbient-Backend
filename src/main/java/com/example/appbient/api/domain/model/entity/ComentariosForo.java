@@ -26,9 +26,9 @@ public class ComentariosForo {
 
     @ManyToOne(targetEntity=PublicacionForo.class)
     @JoinColumn(name="publicacion_id")
-    private PublicacionForo publicacionForo;
+    private PublicacionForo publicacion;
 
     @OneToMany(targetEntity = RespuestaForo.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "comentario_id", referencedColumnName = "id")
-    private List<RespuestaForo> respuestaForo;
+    private List<RespuestaForo> respuestasForo;
 }

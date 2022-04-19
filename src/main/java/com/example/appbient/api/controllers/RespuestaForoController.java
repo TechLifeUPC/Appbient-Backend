@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/publicacion/{idPublicacion}/comentarios/{idComentario}/respuestas")
-@Api(tags = "Comentario")
+@Api(tags = "RespuestaForo")
 public class RespuestaForoController {
     @Autowired
     private RespuestaForoService respuestaForoService;
@@ -25,8 +25,8 @@ public class RespuestaForoController {
     }
 
     @PostMapping
-    public RespuestaForoResource createComentario(@RequestBody CreateRespuestaForoResource resource){
-        return mapper.toResource(respuestaForoService.create(resource));
+    public RespuestaForoResource createComentario(@PathVariable Long idComentario,@RequestBody CreateRespuestaForoResource resource){
+        return mapper.toResource(respuestaForoService.create(idComentario,resource));
     }
     
     @DeleteMapping("/{id}")
