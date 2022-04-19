@@ -26,7 +26,7 @@ public class OngController {
     }
 
     @PostMapping
-    public OngResource createOng(CreateOngResource request) {
+    public OngResource createOng(@RequestBody CreateOngResource request) {
         return mapper.toResource(ongService.create(mapper.toModel(request)));
     }
 
