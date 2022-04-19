@@ -7,6 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 public class TopicoResource {
+    private Long id;
     private String name;
     private String description;
 }

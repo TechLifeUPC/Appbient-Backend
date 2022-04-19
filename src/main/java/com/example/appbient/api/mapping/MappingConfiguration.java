@@ -22,6 +22,16 @@ public class MappingConfiguration {
         return new PublicacionForoMapper();
     }
 
+    @Bean
+    public RespuestaForoMapper respuestaForoMapper() {
+        return new RespuestaForoMapper();
+    }
+
+    @Bean
+    public ComentarioForoMapper comentarioForoMapper() {
+        return new ComentarioForoMapper();
+    }
+
 
 
 

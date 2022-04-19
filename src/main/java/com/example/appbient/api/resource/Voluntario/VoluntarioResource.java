@@ -5,6 +5,7 @@ import lombok.*;
 @Getter
 @Setter
 public class VoluntarioResource {
+    private Long id;
     private String username;
     private String firstName;
     private String lastName;
